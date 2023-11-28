@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrimerControlador;
+use App\Http\Controllers\LoginControler;
+use App\Http\Middleware\LoginMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +38,9 @@ Route::get('/sign/signin', function () {
 Route::get('/sign/signin/{v1}/{v2}/{v3}/{v4}', [PrimerControlador::class, 'vista1']); 
 
 Route::get('/sign/signup/{v1}/{v2}/{v3}', [PrimerControlador::class, 'vista2']); 
+
+Route::post('/login', [LoginControler::class, 'loginPost'])->middleware('LoginMiddleware');
+
+Route::get('/error', function(){
+    return "Error d'accès";
+    })->name('errorAcces.index');
