@@ -15,11 +15,12 @@ class LoginMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        
         if($request-> email != null){
             return $next($request);
         }
         else{
-            to_route('errorAcces.index');
+            return to_route('errorAcces.index');
         }
     }
 }

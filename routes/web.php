@@ -39,7 +39,7 @@ Route::get('/sign/signin/{v1}/{v2}/{v3}/{v4}', [PrimerControlador::class, 'vista
 
 Route::get('/sign/signup/{v1}/{v2}/{v3}', [PrimerControlador::class, 'vista2']); 
 
-Route::post('/login', [LoginControler::class, 'loginPost'])->middleware('LoginMiddleware');
+Route::post('/login', [LoginControler::class, 'loginPost'])->middleware('email');
 
 Route::get('/error', function(){
     return "Error d'accès";
