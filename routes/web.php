@@ -45,7 +45,7 @@ Route::post('/login', [LoginControler::class, 'loginPost'])->middleware('email')
 // Routes de la practica 3
 Route::get('/signin', [App\Http\Controllers\LoginControler::class, 'signInPractica3'])->name('signin');
 Route::get('/signup', [App\Http\Controllers\LoginControler::class, 'signUpPractica3'])->name('signup');
-Route::post('/mostrarInfo', [App\Http\Controllers\LoginControler::class, 'datosUser']) -> middleware('LoginCheck');
+Route::post('/mostrarInfo', [App\Http\Controllers\LoginControler::class, 'datosUser']) -> middleware('email');
 
 
 Route::get('/error', function(){
