@@ -10,11 +10,11 @@
     <form action="/login" method="post">
         <div>
             <label for="email"> Email </label>
-            <input type="email" name="email">
+            <input type="email" id="email" name="email">
         </div>
         <div>
             <label for="contrasenya"> Contraseña </label>
-            <input type="password" name="contrasenya">
+            <input type="password" id="contrasenya" name="password">
         </div>
         <div>
             <input type="checkbox" id="remember" name="remember" value="remember">

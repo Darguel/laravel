@@ -4,6 +4,8 @@ use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrimerControlador;
 use App\Http\Controllers\LoginControler;
+use App\Http\Controllers\ControllerProfe;
+use App\Http\Controllers\ControllerAlumnos;
 use App\Http\Middleware\LoginMiddleware;
 
 /*
@@ -51,3 +53,16 @@ Route::post('/mostrarInfo', [App\Http\Controllers\LoginControler::class, 'datosU
 Route::get('/error', function(){
     return "Error d'accès";
     })->name('errorAcces.index');
+
+// 
+
+//administración de usuarios
+
+Route::controller(ControllerProfe::class)->group(function(){
+    Route::get('/prof', 'index') -> name('prof.index');
+    Route::get('/prof/edit/{id}', 'edit') -> name('prof.edit');
+    Route::get('/prof/create', 'create') -> name('prof.create');
+    Route::post('/prof', 'store') -> name('prof.store');
+    Route::put('/prof/{id}', 'update') -> name('prof.update');
+    Route::delete('/prof/{id}', 'destroy') -> name('prof.destroy');
+});
