@@ -24,7 +24,14 @@ class ControllerProfe extends Controller
     function store(Request $request){
         $usuari = new Usuari();
 
+        $usuari->id = $request->id;
         $usuari->nom = $request->nom;
+        $usuari->cognoms = $request->cognom;
+        $usuari->email = $request->email;
+        $usuari->password = $request->password;
+        $usuari->rol = $request->rol;
+        $usuari->actiu = $request->actiu;
+
 
         $usuari->save();
         

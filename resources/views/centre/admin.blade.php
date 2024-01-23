@@ -7,6 +7,9 @@
 </head>
 <body>
     <h1>Lista de Profesores</h1>
+    @if ($lista->isEmpty())
+    <p>No hay ningun professor en la BBDD.</p>
+    @else
     <table>
         @foreach ($lista as $user)
             <tr>
@@ -25,6 +28,7 @@
             </tr>   
         @endforeach 
     </table>
+    @endif
     <a href="/prof/create">Crear nuevo usuario profesor</a>
 </body>
 </html>

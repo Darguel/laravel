@@ -66,3 +66,12 @@ Route::controller(ControllerProfe::class)->group(function(){
     Route::put('/prof/{id}', 'update') -> name('prof.update');
     Route::delete('/prof/{id}', 'destroy') -> name('prof.destroy');
 });
+
+Route::controller(ControllerAlumnos::class)->group(function(){
+    Route::get('/alum', 'index') -> name('alum.index');
+    Route::get('/alum/edit/{id}', 'edit') -> name('alum.edit');
+    Route::get('/alum/create', 'create') -> name('alum.create');
+    Route::post('/alum', 'store') -> name('alum.store');
+    Route::put('/alum/{id}', 'update') -> name('alum.update');
+    Route::delete('/alum/{id}', 'destroy') -> name('alum.destroy');
+});
